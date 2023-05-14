@@ -26,6 +26,8 @@ async function run() {
         const resumeCollection = client.db("ResumeDB").collection('ResumeDetails');
 
         // get all resume
+
+        
         app.get('/resume/:id', async (req, res) => {
             const id = req.params.id;
             const cursor = await resumeCollection.find({ userId: new ObjectId(id) });
